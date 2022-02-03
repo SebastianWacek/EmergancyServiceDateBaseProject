@@ -1,0 +1,226 @@
+
+
+------------------------ Karetki ------------------------
+
+INSERT INTO karetki VALUES (0, 'podstawowa', 'BHA8527', 1, '1053');
+INSERT INTO karetki VALUES (1, 'podstawowa', 'NGI5403', 1, '976');
+INSERT INTO karetki VALUES (2, 'specjalistyczna', 'WS29804', 1, '983');
+INSERT INTO karetki VALUES (3, 'specjalistyczna', 'NBR7134', 1, '983');
+INSERT INTO karetki VALUES (4, 'specjalistyczna', 'CBY7449', 1, '1167');
+INSERT INTO karetki VALUES (5, 'transportowa', 'SWD3075', 2, '1087');
+INSERT INTO karetki VALUES (6, 'transportowa', 'RBR9102', 2, '1218');
+INSERT INTO karetki VALUES (7, 'transportowa', 'ZSW7961', 3, '1109');
+INSERT INTO karetki VALUES (8, 'transportowa', 'TKI0259', 3, '1329');
+INSERT INTO karetki VALUES (9, 'transportowa', 'BAU6147', 4, '1678');
+INSERT INTO karetki VALUES (10, 'transportowa', 'WGR6362', 2, '1129');
+INSERT INTO karetki VALUES (11, 'neonatologiczne', 'TBU6362', 3, '1349');
+INSERT INTO karetki VALUES (12, 'neonatologiczne', 'TBU1926', 4, '1249');
+INSERT INTO karetki VALUES (13, 'podstawowa', 'TKI1376', 2, '1248');
+INSERT INTO karetki VALUES (14, 'specjalistyczna', 'TKI8326', 2, '1298');
+
+------------------------ Przeglady_karetek ------------------------
+
+INSERT INTO przeglady_karetek VALUES(0, 'podstawowy', DATE '2021-07-12', DATE'2022-07-12', 0);
+INSERT INTO przeglady_karetek VALUES(1, 'podstawowy', DATE'2021-07-16', DATE'2022-07-16', 1);
+INSERT INTO przeglady_karetek VALUES(2, 'podstawowy', DATE'2021-05-16', DATE'2022-05-16', 2);
+INSERT INTO przeglady_karetek VALUES(3, 'podstawowy', DATE'2021-03-11', DATE'2022-03-11', 3);
+INSERT INTO przeglady_karetek VALUES(4, 'podstawowy', DATE'2021-06-18', DATE'2022-10-13', 4);
+INSERT INTO przeglady_karetek VALUES(5, 'podstawowy', DATE'2021-05-16', DATE'2022-05-16', 5);
+INSERT INTO przeglady_karetek VALUES(6, 'podstawowy', DATE'2021-02-15', DATE'2022-02-15', 6);
+INSERT INTO przeglady_karetek VALUES(7, 'podstawowy', DATE'2021-06-18', DATE'2022-04-06', 7);
+INSERT INTO przeglady_karetek VALUES(8, 'specjalistyczny', DATE'2021-09-04', DATE'2022-09-04', 8);
+INSERT INTO przeglady_karetek VALUES(9, 'specjalistyczny', DATE'2021-01-24', DATE'2022-01-24', 9);
+INSERT INTO przeglady_karetek VALUES(10, 'specjalistyczny', DATE'2021-07-13', DATE'2022-07-13', 10);
+INSERT INTO przeglady_karetek VALUES(11, 'specjalistyczny', DATE'2021-09-16', DATE'2022-09-16', 11);
+INSERT INTO przeglady_karetek VALUES(12, 'podstawowy', DATE'2021-01-20', DATE'2022-01-20', 12);
+INSERT INTO przeglady_karetek VALUES(13, 'podstawowy', DATE'2021-11-14', DATE'2022-11-14', 13);
+INSERT INTO przeglady_karetek VALUES(14, 'specjalistyczny', DATE'2021-04-16', DATE'2022-04-16', 14);
+
+------------------------ Dyzury ------------------------
+
+INSERT INTO dyzury VALUES(0, 'zakładowy', 'Szpital Wojewódzki', 'poniedziałek', DATE'2022-01-16');
+INSERT INTO dyzury VALUES(1, 'zakładowy', 'Szpital Wojewódzki', 'wtorek', DATE'2022-01-12'); 
+INSERT INTO dyzury VALUES(2, 'zakładowy', 'Szpital Wojewódzki', 'sobota', DATE'2022-01-08'); 
+INSERT INTO dyzury VALUES(3, 'zakładowy', 'Szpital Kielecki św. Aleksandra', 'piątek', DATE'2022-01-17'); 
+INSERT INTO dyzury VALUES(4, 'zakładowy', 'Szpital Kielecki św. Aleksandra', 'czwartek', DATE'2022-01-04'); 
+INSERT INTO dyzury VALUES(5, 'zakładowy', 'Szpital Wojewódzki', 'środa', DATE'2022-01-01');
+INSERT INTO dyzury VALUES(6, 'na wezwanie', 'Szpital Wojewódzki', 'sobota', DATE'2022-01-03'); 
+INSERT INTO dyzury VALUES(7, 'zakładowy', 'Szpital Wojewódzki', 'wtorek', DATE'2022-01-28'); 
+INSERT INTO dyzury VALUES(8, 'na wezwanie', 'Szpital Wojewódzki', 'niedziela', DATE'2022-01-10'); 
+INSERT INTO dyzury VALUES(9, 'na wezwanie', 'Szpital Kielecki św. Aleksandra', 'piątek', DATE'2022-01-20'); 
+INSERT INTO dyzury VALUES(10, 'zakładowy', 'Szpital Kielecki św. Aleksandra', 'środa', DATE'2022-01-26'); 
+INSERT INTO dyzury VALUES(11, 'na wezwanie', 'Szpital Wojewódzki', 'środa', DATE'2022-01-15');
+INSERT INTO dyzury VALUES(12, 'na wezwanie', 'Szpital Wojewódzki', 'poniedziałek', DATE'2022-01-27'); 
+INSERT INTO dyzury VALUES(13, 'zakładowy', 'Szpital Wojewódzki', 'wtorek', DATE'2022-01-19'); 
+INSERT INTO dyzury VALUES(14, 'zakładowy', 'Szpital Wojewódzki', 'czwartek', DATE'2022-01-23'); 
+
+------------------------ Zarobki ------------------------
+
+INSERT INTO zarobki VALUES(0, 80, 'podstawowy', 0, 0);
+INSERT INTO zarobki VALUES(1, 90, 'podstawowy', 0, 1);
+INSERT INTO zarobki VALUES(2, 160, 'specjalny', 20, 2);
+INSERT INTO zarobki VALUES(3, 85, 'podstawowy', 0, 3);
+INSERT INTO zarobki VALUES(4, 80, 'podstawowy', 30, 4);
+INSERT INTO zarobki VALUES(5, 90, 'podstawowy', 0, 5);
+INSERT INTO zarobki VALUES(6, 180, 'specjalny', 50, 6);
+INSERT INTO zarobki VALUES(7, 95, 'podstawowy', 20, 7);
+INSERT INTO zarobki VALUES(8, 200, 'specjalny', 60, 8);
+INSERT INTO zarobki VALUES(9, 120, 'podstawowy', 10, 9);
+INSERT INTO zarobki VALUES(10, 85, 'podstawowy', 40, 10);
+INSERT INTO zarobki VALUES(11, 110, 'podstawowy', 20, 11);
+INSERT INTO zarobki VALUES(12, 95, 'podstawowy', 10, 12);
+INSERT INTO zarobki VALUES(13, 75, 'podstawowy', 40, 13);
+INSERT INTO zarobki VALUES(14, 90, 'podstawowy', 30, 14);
+
+------------------------ Ratownicy ------------------------
+
+INSERT INTO ratownicy VALUES(0, 'Mateusz', 'Dobrowolski', 24, 0, 0);
+INSERT INTO ratownicy VALUES(1, 'Mateusz', 'Nowak', 27, 1, 0);
+INSERT INTO ratownicy VALUES(2, 'Wilhelm', 'Zieliński', 28, 2, 1);
+INSERT INTO ratownicy VALUES(3, 'Bogumił', 'Górecki', 32, 3, 2);
+INSERT INTO ratownicy VALUES(4, 'Czesław', 'Nowicki', 36, 4, 3);
+INSERT INTO ratownicy VALUES(5, 'Igor', 'Sawicki', 29, 5, 3);
+INSERT INTO ratownicy VALUES(6, 'Sergiusz', 'Jakubowski', 41, 6, 4);
+INSERT INTO ratownicy VALUES(7, 'Ferdynand', 'Witkowski', 38, 7, 5);
+INSERT INTO ratownicy VALUES(8, 'Bronisław', 'Bednarek', 45, 8, 6);
+INSERT INTO ratownicy VALUES(9, 'Patrycja', 'Konieczna', 34, 9, 7);
+INSERT INTO ratownicy VALUES(10, 'Helena', 'Kowalewska', 27, 10, 8);
+INSERT INTO ratownicy VALUES(11, 'Zbigniew', 'Socha', 26, 11, 9);
+INSERT INTO ratownicy VALUES(12, 'Lech', 'Leśniak', 30, 12, 9);
+INSERT INTO ratownicy VALUES(13, 'Liliana', 'Sawicka', 31, 13, 10);
+INSERT INTO ratownicy VALUES(14, 'Martyna', 'Bednarczyk', 32, 14, 12);
+
+------------------------ Kierowcy------------------------
+
+INSERT INTO kierowcy VALUES(0, 'Radosław', 'Głowacki', 34, 6, 0);
+INSERT INTO kierowcy VALUES(1, 'Marcel', 'Dobrowolski', 37, 6, 1);
+INSERT INTO kierowcy VALUES(2, 'Maciej', 'Andrzejewski', 28, 8, 2);
+INSERT INTO kierowcy VALUES(3, 'Aleksander', 'Tomaszewski', 29, 4, 3);
+INSERT INTO kierowcy VALUES(4, 'Juliusz', 'Mazurkiewicz', 32, 7, 4);
+INSERT INTO kierowcy VALUES(5, 'Alfred', 'Wrona', 33, 9, 5);
+INSERT INTO kierowcy VALUES(6, 'Zbigniew', 'Stankiewicz', 41, 13, 6);
+INSERT INTO kierowcy VALUES(7, 'Małgorzata', 'Stankiewicz', 37, 10, 7);
+INSERT INTO kierowcy VALUES(8, 'Wiktoria', 'Kozioł', 40, 13, 8);
+INSERT INTO kierowcy VALUES(9, 'Halina', 'Stasiak', 43, 12, 9);
+INSERT INTO kierowcy VALUES(10, 'Aleksandra', 'Witkowska', 33, 4, 10);
+INSERT INTO kierowcy VALUES(11, 'Łucja', 'Jasińska', 29, 2, 11);
+INSERT INTO kierowcy VALUES(12, 'Leonard', 'Czajkowski', 28, 1, 12);
+INSERT INTO kierowcy VALUES(13, 'Juliusz', 'Żak', 32, 3, 13);
+INSERT INTO kierowcy VALUES(14, 'Hubert', 'Bielecki', 37, 5, 14);
+
+------------------------ Lekarze ------------------------
+
+INSERT INTO lekarze VALUES(0, 'Czesław', 'Kurek', 37, 'Kardiolog', 0);
+INSERT INTO lekarze VALUES(1, 'Albert', 'Szymański', 46, 'Pediatra', 0);
+INSERT INTO lekarze VALUES(2, 'Olivier', 'Orzechowski', 38, 'Pediatra', 1);
+INSERT INTO lekarze VALUES(3, 'Lucyna', 'Jóźwiak', 30, 'Ortopeda', 2);
+INSERT INTO lekarze VALUES(4, 'Patrycja', 'Mróz', 29, 'Pediatra', 2);
+INSERT INTO lekarze VALUES(5, 'Oskar', 'Wysocki', 34, 'Kardiolog', 3);
+INSERT INTO lekarze VALUES(6, 'Antoni', 'Sokołowski', 36, 'Ortopeda', 4);
+INSERT INTO lekarze VALUES(7, 'Herbert', 'Konieczny', 39, 'Ortopeda', 4);
+INSERT INTO lekarze VALUES(8, 'Dominika', 'Owczarek', 39, 'Pediatra', 4);
+INSERT INTO lekarze VALUES(9, 'Hanna', 'Kwiatkowska', 44, 'Kardiolog', 7);
+INSERT INTO lekarze VALUES(10, 'Klaudiusz', 'Karpiński', 43, 'Ortopeda', 7);
+INSERT INTO lekarze VALUES(11, 'Alfred', 'Czerwiński', 35, 'Kardiolog', 9);
+INSERT INTO lekarze VALUES(12, 'Nadia', 'Andrzejewska', 45, 'Pediatra', 11);
+INSERT INTO lekarze VALUES(13, 'Mateusz', 'Kruk', 38, 'Kardiolog', 13);
+INSERT INTO lekarze VALUES(14, 'Lilianna', 'Kowalewska', 41, 'Pediatra', 5);
+
+
+------------------------ Typ zgłoszenia ------------------------
+
+INSERT INTO typ_zgloszenia VALUES(0, 'uzasadnione', DATE'2022-01-12', '+48 103948573', 0);
+INSERT INTO typ_zgloszenia VALUES(1, 'uzasadnione', DATE'2022-01-12', '847593759', 1);
+INSERT INTO typ_zgloszenia VALUES(2, 'uzasadnione', DATE'2022-01-17', '495739502', 1);
+INSERT INTO typ_zgloszenia VALUES(3, 'uzasadnione', DATE'2021-12-15', '+48 103856305', 2);
+INSERT INTO typ_zgloszenia VALUES(4, 'specjalne', DATE'2022-01-02', '+48 947103548', 2);
+INSERT INTO typ_zgloszenia VALUES(5, 'uzasadnione', DATE'2022-01-07', '037503456', 2);
+INSERT INTO typ_zgloszenia VALUES(6, 'uzasadnione', DATE'2022-01-10', '103994758', 3);
+INSERT INTO typ_zgloszenia VALUES(7, 'uzasadnione', DATE'2021-12-23', '937405883', 3);
+INSERT INTO typ_zgloszenia VALUES(8, 'specjalne', DATE'2022-01-29', '102875884', 4);
+INSERT INTO typ_zgloszenia VALUES(9, 'uzasadnione', DATE'2022-01-21', '102956553', 4);
+INSERT INTO typ_zgloszenia VALUES(10, 'uzasadnione', DATE'2022-01-07', '576990746', 6);
+INSERT INTO typ_zgloszenia VALUES(11, 'uzasadnione', DATE'2021-12-03', '103664997', 5);
+INSERT INTO typ_zgloszenia VALUES(12, 'specjalne', DATE'2022-01-14', '557395638', 7);
+INSERT INTO typ_zgloszenia VALUES(13, 'uzasadnione', DATE'2022-01-19', '+48 047886738', 8);
+INSERT INTO typ_zgloszenia VALUES(14, 'uzasadnione', DATE'2022-01-12', '885736486', 11);
+
+
+------------------------ Pacjenci ------------------------
+
+INSERT INTO pacjenci VALUES(0, 'Andrzej', 'Gala', 64, 'Uraz nogi', 0);
+INSERT INTO pacjenci VALUES(1, 'Mieczysława', 'Kowalska', 54, 'Uraz ręki', 1);
+INSERT INTO pacjenci VALUES(2, 'Gracjan', 'Orłowski', 78, 'Uraz nogi', 2);
+INSERT INTO pacjenci VALUES(3, 'Władysław', 'Jakubowski', 24, 'Omdlenie', 3);
+INSERT INTO pacjenci VALUES(4, 'Ksawery', 'Lipiński', 36, 'Choroba serca', 4);
+INSERT INTO pacjenci VALUES(5, 'Anna', 'Milewska', 48, 'Omdlenie', 5);
+INSERT INTO pacjenci VALUES(6, 'Sylwester', 'Górecki', 65, 'Choroba serca', 6);
+INSERT INTO pacjenci VALUES(7, 'Klaudiusz', 'Jabłoński', 78, 'Omdlenie', 7);
+INSERT INTO pacjenci VALUES(8, 'Mateusz', 'Wiśniewski', 81, 'Zapaść', 8);
+INSERT INTO pacjenci VALUES(9, 'Michalina', 'Laskowska', 83, 'Omdlenie', 9);
+INSERT INTO pacjenci VALUES(10, 'Patryk', 'Matuszewski', 37, 'Omdlenie', 10);
+INSERT INTO pacjenci VALUES(11, 'Zygmunt', 'Wawrzyniak', 59, 'Zapaść', 11);
+INSERT INTO pacjenci VALUES(12, 'Aniela', 'Jastrzębska', 48, 'Omdlenie', 12);
+INSERT INTO pacjenci VALUES(13, 'Michał', 'Michalak', 35, 'Zapaść', 13);
+INSERT INTO pacjenci VALUES(14, 'Beata', 'Kurek', 24, 'Choroba serca', 14);
+
+
+
+------------------------ Urlopy_lekarzy ------------------------
+
+INSERT INTO urlopy_lekarzy VALUES(0, 4, 'podstawowy', DATE'2022-01-16', DATE'2022-01-20', 0);
+INSERT INTO urlopy_lekarzy VALUES(1, 4, 'podstawowy', DATE'2021-12-10', DATE'2021-12-14', 1);
+INSERT INTO urlopy_lekarzy VALUES(2, 11, 'podstawowy', DATE'2021-12-20', DATE'2021-12-31', 2);
+INSERT INTO urlopy_lekarzy VALUES(3, 140, 'macierzynski', DATE'2021-06-02', DATE'2022-12-01', 3);
+INSERT INTO urlopy_lekarzy VALUES(4, 5, 'podstawowy', DATE'2022-01-05', DATE'2022-01-10', 4);
+INSERT INTO urlopy_lekarzy VALUES(5, 5, 'podstawowy', DATE'2022-01-20', DATE'2022-01-25', 5);
+INSERT INTO urlopy_lekarzy VALUES(6, 17, 'podstawowy', DATE'2022-01-16', DATE'2022-02-02', 6);
+INSERT INTO urlopy_lekarzy VALUES(7, 2, 'podstawowy', DATE'2022-01-08', DATE'2022-01-12', 2);
+INSERT INTO urlopy_lekarzy VALUES(8, 6, 'podstawowy', DATE'2022-01-24', DATE'2022-01-30', 7);
+INSERT INTO urlopy_lekarzy VALUES(9, 1, 'podstawowy', DATE'2022-01-16', DATE'2022-01-17', 9);
+INSERT INTO urlopy_lekarzy VALUES(10, 10, 'podstawowy', DATE'2022-01-14', DATE'2022-01-24', 11);
+INSERT INTO urlopy_lekarzy VALUES(11, 3, 'podstawowy', DATE'2022-02-08', DATE'2022-02-11', 12);
+INSERT INTO urlopy_lekarzy VALUES(12, 4, 'podstawowy', DATE'2022-02-13', DATE'2022-02-17', 14);
+INSERT INTO urlopy_lekarzy VALUES(13, 1, 'podstawowy', DATE'2022-02-15', DATE'2022-02-16', 13);
+INSERT INTO urlopy_lekarzy VALUES(14, 8, 'podstawowy', DATE'2022-02-16', DATE'2022-02-24', 0);
+
+
+------------------------ Urlop_ratownikow ------------------------
+INSERT INTO urlopy_ratownikow VALUES(0, 'chorobowy', DATE'2022-01-02', DATE'2022-01-04', 0);
+INSERT INTO urlopy_ratownikow VALUES(1, 'podstawowy', DATE'2022-01-02', DATE'2022-01-04', 1);
+INSERT INTO urlopy_ratownikow VALUES(2, 'podstawowy', DATE'2022-01-17', DATE'2022-01-24', 2);
+INSERT INTO urlopy_ratownikow VALUES(3, 'podstawowy', DATE'2022-01-05', DATE'2022-01-08', 3);
+INSERT INTO urlopy_ratownikow VALUES(4, 'podstawowy', DATE'2022-01-10', DATE'2022-01-14', 4);
+INSERT INTO urlopy_ratownikow VALUES(5, 'podstawowy', DATE'2022-01-06', DATE'2022-01-12', 4);
+INSERT INTO urlopy_ratownikow VALUES(6, 'podstawowy', DATE'2022-01-14', DATE'2022-01-21', 6);
+INSERT INTO urlopy_ratownikow VALUES(7, 'podstawowy', DATE'2022-01-03', DATE'2022-01-04', 7);
+INSERT INTO urlopy_ratownikow VALUES(8, 'podstawowy', DATE'2022-01-03', DATE'2022-01-05', 8);
+INSERT INTO urlopy_ratownikow VALUES(9, 'podstawowy', DATE'2022-01-21', DATE'2022-01-27', 8);
+INSERT INTO urlopy_ratownikow VALUES(10, 'podstawowy', DATE'2022-01-01', DATE'2022-01-07', 10);
+INSERT INTO urlopy_ratownikow VALUES(11, 'podstawowy', DATE'2022-02-04', DATE'2022-02-14', 11);
+INSERT INTO urlopy_ratownikow VALUES(12, 'podstawowy', DATE'2022-02-12', DATE'2022-02-17', 1);
+INSERT INTO urlopy_ratownikow VALUES(13, 'podstawowy', DATE'2022-02-13', DATE'2022-02-14', 2);
+INSERT INTO urlopy_ratownikow VALUES(14, 'podstawowy', DATE'2022-02-20', DATE'2022-02-21', 14);
+
+
+
+------------------------ Odziez_medyczna  ------------------------
+
+INSERT INTO odziez_medyczna VALUES(0, 'Bluza medyczna', 'męska', 0);
+INSERT INTO odziez_medyczna VALUES(1, 'Spodnie robocze', 'męska', 1);
+INSERT INTO odziez_medyczna VALUES(2, 'Bluza medyczna', 'męska', 2);
+INSERT INTO odziez_medyczna VALUES(3, 'Obuwie BHP', 'męska', 3);
+INSERT INTO odziez_medyczna VALUES(4, 'Bluza medyczna', 'męska', 4);
+INSERT INTO odziez_medyczna VALUES(5, 'Obuwie BHP', 'męska', 5);
+INSERT INTO odziez_medyczna VALUES(6, 'Spodnie robocze', 'męska', 6);
+INSERT INTO odziez_medyczna VALUES(7, 'Bluza medyczna', 'męska', 7);
+INSERT INTO odziez_medyczna VALUES(8, 'Obuwie BHP', 'męska', 8);
+INSERT INTO odziez_medyczna VALUES(9, 'Spodnie robocze', 'damska', 9);
+INSERT INTO odziez_medyczna VALUES(10, 'Bluza medyczna', 'damska', 10);
+INSERT INTO odziez_medyczna VALUES(11, 'Obuwie BHP', 'męska', 11);
+INSERT INTO odziez_medyczna VALUES(12, 'Bluza medyczna', 'męska', 12);
+INSERT INTO odziez_medyczna VALUES(13, 'Spodnie robocze', 'damska', 13);
+INSERT INTO odziez_medyczna VALUES(14, 'Obuwie BHP', 'damska', 14);
+
+
+

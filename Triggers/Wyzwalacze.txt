@@ -1,0 +1,38 @@
+-- 1.
+CREATE SEQUENCE karetki_seq 
+START WITH 15;
+
+CREATE OR REPLACE TRIGGER karetki_trigger
+INSTEAD OF INSERT ON karetki_view
+FOR EACH ROW
+BEGIN
+INSERT INTO karetki VALUES (karetki_seq.nextval, :NEW.rodzaj_karetki, :NEW.nr_rejestracyjny, :NEW.ilosc_miejsc_dla_pacjentow, :NEW.miesieczna_liczba_kilometrow);
+
+END;
+/
+
+-- 2.
+
+CREATE SEQUENCE zgloszenia_seq
+START WITH 15;
+
+CREATE OR REPLACE TRIGGER zgloszenia_trigger
+INSTEAD OF INSERT ON typ_zgloszenia_view
+FOR EACH ROW
+BEGIN
+INSERT INTO typ_zgloszenia VALUES (zgloszenia_seq.nextval, :NEW.typ_zgloszenia, :NEW.data_zgłoszenia, :NEW.nr_telefonu_zglaszajacego, :NEW.id_karetki);
+END;
+/
+
+-- 3.
+
+CREATE SEQUENCE dyzury_seq
+START WITH 15;
+
+CREATE OR REPLACE TRIGGER dyzury_trigger
+INSTEAD OF INSERT ON dyzury_view
+FOR EACH ROW
+BEGIN
+INSERT INTO dyzury VALUES (dyzury_seq.nextval, :NEW.typ_dyzuru, :NEW.miejsce_dyzuru, :NEW.dzien_tygodnia, :NEW.data_waznosci);
+END;
+/

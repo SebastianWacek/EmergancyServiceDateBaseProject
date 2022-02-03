@@ -1,0 +1,109 @@
+-- 1.
+
+
+CREATE OR REPLACE PROCEDURE zwiekszenie_wynagrodzenia_na_podst_wieku(min_wymagany_wiek NUMBER DEFAULT 0, kwota_podwyzszenia NUMBER DEFAULT 0)
+AS
+
+    CURSOR ratownik_zarobki_cursor IS
+    SELECT dy.id_dyzuru, rt.imie, rt.nazwisko, rt.wiek, dy.dzien_tygodnia, zr.wysokosc_wynagrodzenia, zr.wysokosc_premii 
+    FROM ratownicy rt, dyzury dy, zarobki zr 
+    WHERE rt.id_dyzuru = dy.id_dyzuru AND dy.id_dyzuru = zr.id_dyzuru;
+
+BEGIN
+
+    FOR tmp IN ratownik_zarobki_cursor LOOP
+        IF tmp.wiek >= min_wymagany_wiek THEN
+            UPDATE zarobki z 
+            SET z.wysokosc_premii = z.wysokosc_premii + kwota_podwyzszenia
+            WHERE tmp.id_dyzuru = z.id_dyzuru;
+            
+        END IF;
+    END LOOP;
+    
+END;
+/
+
+SELECT * FROM ratownik_zarobki;
+EXEC zwiekszenie_wynagrodzenia_na_podst_wieku(27, 20);
+SELECT * FROM ratownik_zarobki;
+
+-- 2.
+
+
+CREATE OR REPLACE PROCEDURE zwieksz_wynagrodzenie_o_premie
+AS
+
+    CURSOR wszystkie_zarobki IS
+    SELECT * FROM zarobki
+    FOR UPDATE;
+
+BEGIN
+    FOR tmp IN wszystkie_zarobki LOOP
+        UPDATE zarobki
+        SET wysokosc_wynagrodzenia = wysokosc_wynagrodzenia + wysokosc_premii
+        WHERE CURRENT OF wszystkie_zarobki;
+    END LOOP;
+
+END;
+/
+
+SELECT * FROM zarobki;
+EXEC zwieksz_wynagrodzenie_o_premie;
+SELECT * FROM zarobki;
+
+-- 3.
+
+CREATE OR REPLACE PROCEDURE zwiekszenie_premii_weekend(kwota_podwyzszenia NUMBER DEFAULT 0)
+AS
+
+    CURSOR ratownik_zarobki_cursor IS
+    SELECT dy.id_dyzuru, rt.imie, rt.nazwisko, rt.wiek, dy.dzien_tygodnia, zr.wysokosc_wynagrodzenia, zr.wysokosc_premii 
+    FROM ratownicy rt, dyzury dy, zarobki zr 
+    WHERE rt.id_dyzuru = dy.id_dyzuru AND dy.id_dyzuru = zr.id_dyzuru;
+
+BEGIN
+
+    FOR tmp IN ratownik_zarobki_cursor LOOP
+        IF tmp.dzien_tygodnia = 'sobota' OR  tmp.dzien_tygodnia = 'niedziela'THEN
+            UPDATE zarobki z 
+            SET z.wysokosc_premii = z.wysokosc_premii + kwota_podwyzszenia
+            WHERE tmp.id_dyzuru = z.id_dyzuru;
+            
+        END IF;
+    END LOOP;
+    
+END;
+/
+
+SELECT * FROM ratownik_zarobki;
+EXEC zwiekszenie_premii_weekend(100);
+SELECT * FROM ratownik_zarobki;
+
+-- 4.
+
+CREATE OR REPLACE PROCEDURE przeglady_karetek_po_terminie 
+AS
+    CURSOR przeglady_cursor IS
+    SELECT *
+    FROM przeglady_karetek;
+    
+    current_date DATE;
+    
+BEGIN
+    
+    SELECT SYSDATE 
+    INTO current_date 
+    FROM DUAL;
+
+    DBMS_OUTPUT.PUT_LINE('Karetki, ktorym nalezy zrobic przeglad:');
+    DBMS_OUTPUT.PUT_LINE('ID karetki' || ' | ' || ' Kiedy przeglad sie skonczyl');
+    FOR tmp IN przeglady_cursor LOOP
+        IF tmp.data_waznosci < current_date THEN
+            DBMS_OUTPUT.PUT_LINE( tmp.id_karetki ||  '               ' || tmp.data_waznosci);
+        END IF;
+    END LOOP;
+
+END;
+/
+
+EXEC przeglady_karetek_po_terminie ;

@@ -1,0 +1,113 @@
+CREATE TABLE Karetki(
+    id_karetki number(6) PRIMARY KEY,
+    Rodzaj_karetki varchar2(50) NOT NULL,
+    Nr_rejestracyjny varchar2(50) NOT NULL,
+    Ilosc_miejsc_dla_pacjentow number(6),
+    Miesieczna_liczba_kilometrow number(6)
+);
+
+CREATE TABLE Przeglady_karetek(
+    id_przegladu number(6) PRIMARY KEY,
+    Typ_przegladu varchar2(50) NOT NULL,
+    Data_wykonania DATE,
+    Data_waznosci DATE NOT NULL,
+    id_karetki number(6) NOT NULL,
+    CONSTRAINT fk_id_karetkiPRK FOREIGN KEY(id_karetki) REFERENCES Karetki(id_karetki)
+);
+
+
+CREATE TABLE Dyzury(
+    id_dyzuru number(6) PRIMARY KEY,
+    Typ_dyzuru varchar2(50) NOT NULL,
+    Miejsce_dyzuru varchar2(50) NOT NULL,
+    Dzien_tygodnia varchar2(50) NOT NULL,
+    Data_waznosci DATE NOT NULL
+);
+
+CREATE TABLE Zarobki(
+    id_wynagrodzenia number(6) PRIMARY KEY,
+    wysokosc_wynagrodzenia number(6) NOT NULL,
+    sposob_naliczania varchar2(50) NOT NULL,
+    Wysokosc_premii  number(6),
+    id_dyzuru number(6),
+    CONSTRAINT fk_id_dyzuruZ FOREIGN KEY(id_dyzuru) REFERENCES Dyzury(id_dyzuru)
+);
+
+CREATE TABLE Ratownicy (
+    id_ratownika number(6) PRIMARY KEY,
+    Imie varchar2(50) NOT NULL,
+    Nazwisko varchar2(50) NOT NULL,
+    Wiek number(6),
+    id_dyzuru number(6),
+    id_karetki number(6),
+    CONSTRAINT fk_id_karetki FOREIGN KEY(id_karetki) REFERENCES Karetki(id_karetki),
+    CONSTRAINT fk_id_dyzuru FOREIGN KEY(id_dyzuru) REFERENCES Dyzury(id_dyzuru)
+);
+
+CREATE TABLE Kierowcy (
+    id_kierowcy number(6) PRIMARY KEY,
+    Imie varchar2(50) NOT NULL,
+    Nazwisko varchar2(50) NOT NULL,
+    Wiek number(6),
+    Lata_stazu number(6),
+    id_karetki number(6),
+    CONSTRAINT fk_id_karetkiK FOREIGN KEY(id_karetki) REFERENCES Karetki(id_karetki)
+);
+
+CREATE TABLE Lekarze (
+    id_lekarza number(6) PRIMARY KEY,
+    Imie varchar2(50) NOT NULL,
+    Nazwisko varchar2(50) NOT NULL,
+    Wiek number(6),
+    Specjalizacja varchar2(50),
+    id_karetki number(6),
+    CONSTRAINT fk_id_karetkiL FOREIGN KEY(id_karetki) REFERENCES Karetki(id_karetki)
+);
+
+CREATE TABLE Typ_zgloszenia(
+    id_zgloszenia number(6) PRIMARY KEY,
+    Typ_zgloszenia varchar2(50) NOT NULL,
+    data_zgloszenia DATE NOT NULL,
+    Nr_telefonu_zglaszajacego varchar2(20) NOT NULL,
+    id_karetki number(6),
+    CONSTRAINT Zadysponowana_karetkaFK FOREIGN KEY(id_karetki) REFERENCES Karetki(id_karetki)
+);
+
+
+CREATE TABLE Pacjenci (
+    id_pacjenta number(6) PRIMARY KEY,
+    Imie varchar2(50) NOT NULL,
+    Nazwisko varchar2(50) NOT NULL,
+    Wiek number(6),
+    Powod_hospitalizacji varchar2(50) NOT NULL,
+    id_zgloszenia number(6) NOT NULL,
+    CONSTRAINT fk_id_zgloszeniaP FOREIGN KEY(id_zgloszenia) REFERENCES typ_zgloszenia(id_zgloszenia)
+);
+
+CREATE TABLE Urlopy_lekarzy (
+    id_urlopu_lekarza number(6) PRIMARY KEY,
+    Wykorzystane_dni_urlopu number(6),
+    Typ_urlopu varchar2(50) NOT NULL,
+    data_rozpoczecia_urlopu DATE NOT NULL,
+    data_zakonczenia_urlopu DATE NOT NULL,
+    id_lekarza number(6) NOT NULL,
+    CONSTRAINT fk_id_lekarzaUL FOREIGN KEY(id_lekarza) REFERENCES Lekarze(id_lekarza)
+);
+
+CREATE TABLE Urlopy_ratownikow(
+    id_urlopu_ratownika number(6) PRIMARY KEY,
+    Typ_urlopu varchar2(50) NOT NULL,
+    data_rozpoczecia_urlopu DATE NOT NULL,
+    data_zakonczenia_urlopu DATE NOT NULL,
+    id_ratownika number(6) NOT NULL,
+    CONSTRAINT fk_id_ratownikaUR FOREIGN KEY(id_ratownika) REFERENCES Ratownicy(id_ratownika)
+);
+
+CREATE TABLE Odziez_medyczna(
+    nr_zestawu_odziezy number(6) PRIMARY KEY,
+    Typ_odziezy varchar2(50) NOT NULL,
+    Damska_czy_meska varchar2(30) NOT NULL,
+    id_ratownika number(6),
+    CONSTRAINT fk_id_ratownikaOM FOREIGN KEY(id_ratownika) REFERENCES Ratownicy(id_ratownika)
+);
+

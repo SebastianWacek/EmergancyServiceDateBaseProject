@@ -1,0 +1,36 @@
+-- 1. 
+
+CREATE OR REPLACE VIEW pacjenci_zgloszenia AS
+SELECT pa.imie, pa.nazwisko, pa.wiek, pa.powod_hospitalizacji,tz.data_zgłoszenia, tz.nr_telefonu_zglaszajacego
+FROM pacjenci pa, typ_zgloszenia tz 
+WHERE pa.id_zgloszenia = tz.id_zgloszenia;
+
+-- 2. 
+
+CREATE OR REPLACE VIEW karetki_view AS
+SELECT rodzaj_karetki, nr_rejestracyjny, ilosc_miejsc_dla_pacjentow, miesieczna_liczba_kilometrow
+FROM karetki;
+
+-- 3.
+
+CREATE OR REPLACE VIEW dyzury_view AS 
+SELECT typ_dyzuru, miejsce_dyzuru, dzien_tygodnia, data_waznosci 
+FROM dyzury;
+
+-- 4.
+
+CREATE OR REPLACE VIEW kierowcy_karetki AS
+SELECT kier.imie, kier.nazwisko, kier.wiek, kier.lata_stazu, kar.rodzaj_karetki, kar.nr_rejestracyjny, kar.ilosc_miejsc_dla_pacjentow, kar.miesieczna_liczba_kilometrow
+FROM karetki kar, kierowcy kier WHERE kar.id_karetki = kier.id_karetki;
+
+-- 5.
+
+CREATE OR REPLACE VIEW zarobki_view AS 
+SELECT wysokosc_wynagrodzenia, wysokosc_premii, sposob_naliczania
+FROM zarobki;
+
+-- 6. 
+CREATE OR REPLACE VIEW ratownicy_odziez AS
+SELECT ra.imie, ra.nazwisko, om.Typ_odziezy, om.Damska_czy_meska
+FROM Ratownicy ra, Odziez_medyczna om 
+WHERE ra.id_ratownika = om.nr_zestawu_odziezy;
